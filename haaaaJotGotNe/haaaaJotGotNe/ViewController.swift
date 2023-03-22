@@ -8,10 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView_custom: UITableView!
     let cellName: String = "customCell"
-    let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle"]
+    let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         customCell.imageView_custom.image = UIImage(systemName: cellTitle[indexPath.row])
         customCell.label_custom.text = cellTitle[indexPath.row]
-        
+        customCell.button_custom.imageView?.image = UIImage(named: "search")
+        //pencil 일때 써치
+        //doc.circle 유저
+        //bolt.circle 휴지통
         return customCell
     }
     
