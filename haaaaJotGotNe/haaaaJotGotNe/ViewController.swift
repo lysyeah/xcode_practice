@@ -18,6 +18,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView_custom: UITableView!
     let cellName: String = "customCell"
+    let cellName2: String = "customCell2"
+    let cellName3: String = "customCell3"
+    
+    
+    @IBAction func mySwitch(_ sender: UISwitch){
+        if sender.isOn{
+            tableView_custom = true
+        }else {
+            tableView_custom = false
+        }
+    }
     /*
     아래 배열 방법은 '동적 배열'이다.
     <>기호를 사용하여 배열 값의 데이터 타입을 지정하는 문법을 제네릭(Generic)이라고 한다.
@@ -77,20 +88,29 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // dequeueReusableCell(withIdentifier:for:) 에 대한 정보. 이해가 잘 되지 않는다.
         // https://kiljh.tistory.com/232
                
+        let customCell2 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+        
+        let customCell3 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
         
         customCell.imageView_custom.image = UIImage(systemName: cellTitle[indexPath.row])
         customCell.label_custom.text = cellTitle[indexPath.row]
         
         
         /*
-        이렇게 하니까 마지막 줄인 user로 모두 바뀐다.
+        밑에처럼하니까 마지막 줄인 user로 모두 바뀐다.
         if문을 써야할까
-        customCell.button_custom.imageView?.image = UIImage(named: "pencil")
-        customCell.button_custom.imageView?.image = UIImage(named: "search")
-        customCell.button_custom.imageView?.image = UIImage(named: "user")
          */
-        customCell.button_custom.imageView?.image = UIImage(named: "pencil")
         
+        
+        if ((customCell.button_custom.imageView?.image = UIImage(named: "pencil")) != nil) {
+            return customCell
+        }else{
+            customCell2.button_custom.imageView?.image = UIImage(named: "doc.circle")
+        };else{
+            customCell3.button_custom.imageView?.image = UIImage(named: "doc.circle")
+        }
+        //customCell.button_custom.imageView?.image = UIImage(named: "search")
+        //customCell.button_custom.imageView?.image = UIImage(named: "user")
         
         //pencil 일때 써치
         //doc.circle 유저
