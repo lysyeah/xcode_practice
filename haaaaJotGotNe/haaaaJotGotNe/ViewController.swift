@@ -22,13 +22,24 @@ class ViewController: UIViewController {
     let cellName3: String = "customCell3"
     
     
-    @IBAction func mySwitch(_ sender: UISwitch){
-        if sender.isOn{
-            tableView_custom = true
-        }else {
-            tableView_custom = false
+    @objc func mySwitch(_ sender: UISwitch){
+        if sender === cellName {
+            
+        }else if === cellName2 {
+            
+        }else if === cellName3{
+            
+        }
+        
+        switch sender {
+            case button1:
+            case button2:
+            case button3:
+            
         }
     }
+    
+    
     /*
     아래 배열 방법은 '동적 배열'이다.
     <>기호를 사용하여 배열 값의 데이터 타입을 지정하는 문법을 제네릭(Generic)이라고 한다.
@@ -66,6 +77,7 @@ class ViewController: UIViewController {
      // ["pizza","hamburger", "hamburger", "taco", "bacon"]
      
     */
+    
     let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle"]
     
     override func viewDidLoad() {
