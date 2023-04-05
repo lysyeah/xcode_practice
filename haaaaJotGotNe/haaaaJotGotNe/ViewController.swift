@@ -8,10 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     /*
         스토리 보드에서 작업한 UI객체를 코드에 연결하기 위해서는
         IBOutlet 또는 IBAction을 사용해서 연결해야한다.
         
+        
+        weak을 하는 이유는 ARC메모리 관리 방법 때문인데, 메모리 누구를 방지하기 위함이다.
+        풀어서 얘기를 해보자.
+        무작정 weak을 쓰는 것이 아니고, protocol에서 오직 이 프로토콜은 이 클래스에서만 사용이 가능하다라는 것이 명시되어 있어야한다.
+        protocol이 class or AnyObject를 상속받지 않는다면 모든 곳에서 채택이 가능하다.
+     
+        명시하는 방법의 예시는 아래와 같다.
+        Protocol DeliveryDataProtocol : class {
+            func deliveryData(_data : String){
+                dataLabel.isHidden = false dataLabel.text = data
+            }
+        }
+     
+        여기에서
+        {
+        dataLabel.isHidden = false dataLabel.text = data
+        }
+        가 기능 구현이다.
+        
+        이거 위에 것들은
+        선언만 한것이다.
+     
         weak 과 strong 의 차이는 무엇일까
         https://co-dong.tistory.com/60
     */
@@ -22,7 +45,7 @@ class ViewController: UIViewController {
     let cellName3: String = "customCell3"
     
     
-    @objc func mySwitch(_ sender: UISwitch){
+    @IBAction func mySwitch(_ sender: UISwitch){
         if sender === cellName {
             
         }else if === cellName2 {
@@ -32,9 +55,9 @@ class ViewController: UIViewController {
         }
         
         switch sender {
-            case button1:
-            case button2:
-            case button3:
+            case cellName:
+            case cellName2:
+            case cellName3:
             
         }
     }
@@ -88,6 +111,10 @@ class ViewController: UIViewController {
       
     }
 }
+// 여기까지가 class ViewController: UIViewController
+
+
+
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
