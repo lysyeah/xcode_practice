@@ -46,20 +46,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func mySwitch(_ sender: UISwitch){
-        if sender === cellName {
-            
-        }else if === cellName2 {
-            
-        }else if === cellName3{
-            
-        }
         
-        switch sender {
-            case cellName:
-            case cellName2:
-            case cellName3:
-            
-        }
     }
     
     
@@ -103,7 +90,27 @@ class ViewController: UIViewController {
     
     let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle"]
     
+    
+    
+    /*
+        override에 대해서 공부해보자.
+        애플 공식 문서에서는 오버라이드를 다음과 같이 정의합니다.
+     
+        "하위 클래스는 슈퍼클래스로부터 상속되는
+        인스턴스 메서드,
+        유형 메서드,
+        인스턴스 속성,
+        유형 속성 또는 구독자의 고유한 사용자 지정 구현을 제공할 수 있습니다.
+        이것을 오버라이딩이라고 합니다."
+       
+        https://velog.io/@wook4506/iOS-Swift-Swift-%EB%AC%B8%EB%B2%95%EC%9D%84-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90-19%ED%8E%B8-%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%93%9C-override
+     
+     */
     override func viewDidLoad() {
+        // super VS final 상속받을 수 있다/없다
+        // super는 프로퍼티를 쓸 수 있고
+        // final은 프로퍼티를 쓸 수 없다.
+        // 지금 경우는 super을 썼기 때문에 하위클래스가 viewDidLoad()를 상속받아서 쓸 수 있다.
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView_custom.delegate = self

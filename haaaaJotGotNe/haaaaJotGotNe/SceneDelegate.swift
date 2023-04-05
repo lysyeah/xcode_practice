@@ -8,7 +8,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
+    //가장 큰놈이라고 했나?? 
     var window: UIWindow?
 
 
