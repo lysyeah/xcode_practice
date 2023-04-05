@@ -52,7 +52,30 @@ class ViewController: UIViewController {
          let button = sender as UIButton
          println("Button \(button.tag) was pressed!")
      }
+     
+     이것도 참고해보자.
+     import UIKit
+
+     class ViewController: UIViewController {
+
+         override func viewDidLoad() {
+             super.viewDidLoad()
+         }
+         
+         @IBAction func touchedButton(sender:UIButton) {
+             if sender.tag==0 {
+                 
+             }
+             else if sender.tag==1 {
+                 
+             }
+             else if sender.tag==2 {
+                 
+             }
+         }
+     }
      */
+    
     @IBAction func mySwitch(_ sender: UISwitch){
         
     }
