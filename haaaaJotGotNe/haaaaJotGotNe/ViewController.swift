@@ -44,7 +44,15 @@ class ViewController: UIViewController {
     let cellName2: String = "customCell2"
     let cellName3: String = "customCell3"
     
-    
+    // sender는 해당 메소드를 호출하는 caller를 말한다.
+    // 즉, sender는 이 메소드의 caller이다.
+    /*
+     @IBAction func buttonPressed(sender: AnyObject) {
+
+         let button = sender as UIButton
+         println("Button \(button.tag) was pressed!")
+     }
+     */
     @IBAction func mySwitch(_ sender: UISwitch){
         
     }
