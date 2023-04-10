@@ -183,7 +183,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return customCell
         }else{
             customCell2.button_custom.imageView?.image = UIImage(named: "doc.circle")
-        };else{
+        }else{
             customCell3.button_custom.imageView?.image = UIImage(named: "doc.circle")
         }
         //customCell.button_custom.imageView?.image = UIImage(named: "search")
