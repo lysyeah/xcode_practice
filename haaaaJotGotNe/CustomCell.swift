@@ -13,6 +13,15 @@ class CustomCell: UITableViewCell {
     @IBOutlet weak var label_custom: UILabel!
     @IBOutlet weak var button_custom: UIButton!
     
+    @IBAction func btnAction(_ sender: Any) {
+        print("title: \(label_custom.text)")
+        
+        if label_custom.text!.contains("pencil") {
+            button_custom.setImage( UIImage(named: "search"), for: .normal)
+        } else if label_custom.text!.contains("doc") {
+            button_custom.setImage( UIImage(named: "user"), for: .normal)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

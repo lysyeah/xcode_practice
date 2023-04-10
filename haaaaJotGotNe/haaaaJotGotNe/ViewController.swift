@@ -9,6 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: Optional이란?
+    
+    var userName: String = "name"
+    // print(userName) -> Optional("name")
+    var userName2: String? = "name"
+    // print(userName2) -> "name"
+    
+    
+    
+    
     /*
         스토리 보드에서 작업한 UI객체를 코드에 연결하기 위해서는
         IBOutlet 또는 IBAction을 사용해서 연결해야한다.
@@ -138,6 +148,8 @@ class ViewController: UIViewController {
      
      */
     override func viewDidLoad() {
+        // TODO: 숙제 - viewController life cycle 설명
+        // TODO: 숙제 - optional 설명
         // super VS final 상속받을 수 있다/없다
         // super는 프로퍼티를 쓸 수 있고
         // final은 프로퍼티를 쓸 수 없다.
@@ -146,6 +158,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         tableView_custom.delegate = self
         tableView_custom.dataSource = self
+        
+        print(userName)
       
     }
 }
@@ -165,13 +179,23 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         // dequeueReusableCell(withIdentifier:for:) 에 대한 정보. 이해가 잘 되지 않는다.
         // https://kiljh.tistory.com/232
                
-        let customCell2 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+//        let customCell2 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+//
+//        let customCell3 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+//
         
-        let customCell3 = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+        let title = cellTitle[indexPath.row]
         
-        customCell.imageView_custom.image = UIImage(systemName: cellTitle[indexPath.row])
-        customCell.label_custom.text = cellTitle[indexPath.row]
+        customCell.imageView_custom.image = UIImage(systemName: title)
+        customCell.label_custom.text = title
         
+//        if title.contains("pencil") {
+//            customCell.button_custom.imageView?.image = UIImage(named: "search")
+//        } else if title.contains("doc") {
+//            customCell.button_custom.imageView?.image = UIImage(named: "user")
+//        } else {
+////            customCell.button_custom.imageView?.image = UIImage(named: "trash")
+//        }
         
         /*
         밑에처럼하니까 마지막 줄인 user로 모두 바뀐다.
@@ -179,19 +203,26 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
          */
         
         
-        if ((customCell.button_custom.imageView?.image = UIImage(named: "pencil")) != nil) {
-            return customCell
-        }else{
-            customCell2.button_custom.imageView?.image = UIImage(named: "doc.circle")
-        }else{
-            customCell3.button_custom.imageView?.image = UIImage(named: "doc.circle")
-        }
+//        if ((customCell.button_custom.imageView?.image = UIImage(named: "pencil")) != nil) {
+//            return customCell
+//        } else {
+//            customCell2.button_custom.imageView?.image = UIImage(named: "doc.circle")
+//        } else {
+//            customCell3.button_custom.imageView?.image = UIImage(named: "doc.circle")
+//        }
         //customCell.button_custom.imageView?.image = UIImage(named: "search")
         //customCell.button_custom.imageView?.image = UIImage(named: "user")
         
         //pencil 일때 써치
         //doc.circle 유저
         //bolt.circle 휴지통
+        
+        
+        // TODO: 숙제 - 0번 인덱스 버튼만 눌렀는데 스크롤 내리니까 다른 버튼 이미지가 바뀌는 이유 알아오기
+        
+        
+        
+        
         return customCell
     }
    
