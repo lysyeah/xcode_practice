@@ -11,9 +11,81 @@ class ViewController: UIViewController {
     
     // MARK: Optional이란?
     
-    var userName: String = "name"
+    /* Question 1. 플러스에 왜 에러가 있지? 그리고 test()에는 왜 에러가 있지?
+        
+        func 별명test(newValue number1 : Int, oldValue number2 : Int) -> {
+            return number1 + number2
+        }
+        
+        func test() {
+            print(별명test(newnumber1:3, oldNumber2:5))
+        }
+    */
+    
+    /*
+        // 기본적으로 변수에는 nil이 들어갈 수 없다. optional: nil값에 비어 있을수도 있다고 표현.
+        var variable : Int? // 변수에 값이 없을 수도 있다는 표현이다.
+        var sum = variable! + variable! // unwrapping이라는 의미이다. 이 식에서 값이 있다고 확신한다는 표현을 쓸 떄 !을 쓰면된다.
+                                        // 만약 값이 없으면 지금처럼 에러가 뜬다.
+        if let nonOptionalVariable = optionalValiable{연산} => optional binding 기술인데, !을 사용하지 않고 새로운 상수를 선언하고, 상수에 옵셔널 변수의 값을 넣어보고,
+                                                                nil이 아니면 연산에 사용하는 방식이다. 추후에 자세히 공부해보자.
+     
+        optional은 nil value값 or type casting 체크 등에 중요한 역할을 한다.
+        swift는 기본적으로 nil값을 허용하지 않는다. => runtime error 혹은 compile error가 생긴다.
+     
+        optional casting 기능도 있다. = > ?을 쓰지 않고도 가능하다.
+        let a = "123"
+        let b = Int(a)
+        print(b) // Optional(123)라고 출력된다.
+        여기서 swift는 b를 optional Int형으로 선언한다.
+     
+        var optionalString : String?
+        var optionalString : String? = nil
+        이 둘은 같은 말이다. 보기 좋게 nil도 넣어서 표현하자.
+     
+        var value1 : String? = nil
+            print(value1) // nil이 출력된다.
+        var value2 : String! = nil
+            print(value2) // error가 뜬다. 왜냐하면 실제 값이 필요한데 없기 때문이다.
+     
+        
+     
+        Optional에 대해서 예시를 보자.
+        class Square {
+            var sideLength : Double
+            init(sideLength : Double){
+                self.sideLength = sideLength
+            {
+        }
+        
+        // 1번 예시
+        let optionalSquare1 : Square? = Square(sideLength :2.5)
+        let sideLength1 = optionalSquare1.sideLength
+            print(optionalSquare1) // optional(Square)
+            print(sideLength1)     // optional(2.5)
+            print(sideLength1!)     // 2.5
+     
+        // 2번 예시
+        let optionalSquare2 : Square? = Square(sideLength :2.5)
+        let sideLength2 = optionalSquare2!.sideLength
+            print(opitionalSquare2) //  optional(Square)
+            print(sideLength2)      //  2.5
+            print(sideLength2!)     //  error
+     
+        //  3번 예시
+        let optionalSquare3 : Square! = Square(sideLength: 2.5)
+        let sideLength3 = optionalLength3!.sideLength
+            print(optionalSquare3)  //  Square
+            print(sideLength3)      //  2.5
+            print(sideLength3!)     //  error
+        
+    */
+    
+    
+    
+    var userName: String? = "name"
     // print(userName) -> Optional("name")
-    var userName2: String? = "name"
+    var userName2: String = "name"
     // print(userName2) -> "name"
     
     
