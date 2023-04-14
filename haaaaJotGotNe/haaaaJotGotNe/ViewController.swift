@@ -231,7 +231,7 @@ class ViewController: UIViewController {
         tableView_custom.delegate = self
         tableView_custom.dataSource = self
         
-        print(userName)
+        
       
     }
 }
