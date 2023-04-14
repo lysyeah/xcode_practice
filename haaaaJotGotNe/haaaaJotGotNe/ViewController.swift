@@ -58,7 +58,7 @@ class ViewController: UIViewController {
             {
         }
         
-        // 1번 예시
+        // 1번 예시 * 근데 여기서 Square자리는 타입자리인데 Int같은 타입이 아니어도 괜찮네?
         let optionalSquare1 : Square? = Square(sideLength :2.5)
         let sideLength1 = optionalSquare1.sideLength
             print(optionalSquare1) // optional(Square)
