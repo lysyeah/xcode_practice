@@ -220,8 +220,8 @@ class ViewController: UIViewController {
      
      */
     override func viewDidLoad() {
-        // TODO: 숙제 - viewController life cycle 설명
-        // TODO: 숙제 - optional 설명
+        // TODO: 숙제 - viewController life cycle 설명 - 클리어
+        // TODO: 숙제 - optional 설명 - 클리어
         // super VS final 상속받을 수 있다/없다
         // super는 프로퍼티를 쓸 수 있고
         // final은 프로퍼티를 쓸 수 없다.
@@ -231,8 +231,13 @@ class ViewController: UIViewController {
         tableView_custom.delegate = self
         tableView_custom.dataSource = self
         
+        sangSock_method()
         
       
+    }
+    
+    func sangSock_method() {
+        print("ViewDidLoad!!!")
     }
 }
 // 여기까지가 class ViewController: UIViewController
@@ -247,6 +252,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(indexPath.row)
         let customCell = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
         // dequeueReusableCell(withIdentifier:for:) 에 대한 정보. 이해가 잘 되지 않는다.
         // https://kiljh.tistory.com/232
@@ -290,13 +296,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         //bolt.circle 휴지통
         
         
-        // TODO: 숙제 - 0번 인덱스 버튼만 눌렀는데 스크롤 내리니까 다른 버튼 이미지가 바뀌는 이유 알아오기
-        
         
         
         
         return customCell
     }
-   
+   // TODO: 숙제 - 프로토콜 기본적인걸로 구현해서 적용해보기
     
 }
