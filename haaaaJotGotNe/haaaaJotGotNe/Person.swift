@@ -58,7 +58,11 @@ class Test: ViewController {
         } else {
             testName = "이름이 입력되지 않았습니다."
         }
-        // 다른 예시로도 Optional Chaining을 보자. https://www.zehye.kr/swift/2020/03/05/swift_optional_interview/
+        // 다른 예시로도 Optional Chaining을 보자.
+        // 회원가입을 할 때 만약 name넣는 칸에 optional로 설정해서 비워도 회원가입이 완료가 되었다고 치자.
+        // 서버에서 이름이 호출되었을 때 그 값을 가져와야하는데 없다면 nil로 표현하고, 있다면 그 값을 가져온다.
+        // 참고하면 좋은 사이트. 밑에 있는 내용도 이 사이트 내용이다.
+        // https://www.zehye.kr/swift/2020/03/05/swift_optional_interview/
         /*
          옵셔널 체이닝은 하위 프로퍼티에 옵셔널값이 있는지 없는지를 연속적으로 확인하면서 중간에 하나라도 nil이 존재함다면 nil이 반환되는 형식을 의미한다.
          let roomCount = zehye.residence?.numberOfRoomes
