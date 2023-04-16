@@ -7,9 +7,20 @@
 
 import UIKit
 
+// ViewController는 UIViewController을 상속받겠다는 말이다.
 class ViewController: UIViewController {
     
     // MARK: Optional이란?
+    
+    
+    /* optional을 쓰는 이유:
+        swift는 일반적으로 아래와 같은 언어이다.
+        Safe, Fast, Expressive 이다.
+        옵셔널을 통해 swift는 안정성을 제공한다. 그리고 프로그래머들 간의 원활한 커뮤니케이션을 위해 사용한다.
+        코드만으로도 변수들이 어떤 타입을 가질지 명확하게 보여주며 함수의 파라미터 부분만 봐도 여기에 어떠한 값들이
+        들어올 수 있는지 추축이 가능하기 때문이다.
+     */
+    
     
     /* Question 1. 플러스에 왜 에러가 있지? 그리고 test()에는 왜 에러가 있지?
         
