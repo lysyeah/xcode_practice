@@ -37,7 +37,8 @@ class Test: ViewController {
         tblView.reloadData()
         
         
-        /* if let을 써서 옵셔널 기능을 할 수 있다.
+        /*
+         if let을 써서 옵셔널 기능을 할 수 있다.
          만약 myPersonList의 Array의 목록이 있으면 newName을 실행하는데, '1번 index의 이름'을 실행하라.
          만약 배열이 없으면 '이름이 입력되지 않았습니다'을 프린트해라.
          이게 어떻게 매커니즘이 되냐면,

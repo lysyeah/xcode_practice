@@ -3,7 +3,6 @@
 //  haaaaJotGotNe
 //
 //  Created by 김응엽 on 2023/04/15.
-//
 
 import UIKit
 

@@ -22,6 +22,7 @@ class CustomCell: UITableViewCell {
             button_custom.setImage( UIImage(named: "user"), for: .normal)
         }
     }
+    
     // TODO: 숙제 - 테이블뷰에서 버튼 클릭 후 화면 스크롤 했을 때 기획의도대로 보이도록 변경
     // -> func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell 에서 이미지 처리가 되도록 변경되야 함.
     // 힌트: delegate

@@ -8,8 +8,8 @@
 import UIKit
 
 // ViewController는 UIViewController을 상속받겠다는 말이다.
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, PopupDelete  {
+    //여기에 PopupDelete를 넣은것은 안테나 연결은 했다는 걸로 생각하자. 그러면 이제 연결을 해줘야한다.
     // MARK: Optional이란?
     
     
@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         코드만으로도 변수들이 어떤 타입을 가질지 명확하게 보여주며 함수의 파라미터 부분만 봐도 여기에 어떠한 값들이
         들어올 수 있는지 추축이 가능하기 때문이다.
      */
-    
+     
     
     /* Question 1. 플러스에 왜 에러가 있지? 그리고 test()에는 왜 에러가 있지?
         
@@ -131,6 +131,8 @@ class ViewController: UIViewController {
         weak 과 strong 의 차이는 무엇일까
         https://co-dong.tistory.com/60
     */
+    @IBOutlet weak var OnCreatePopupBtnClicked: UIButton!
+    let AlertPopupVC : String = ""
     
     @IBOutlet weak var tableView_custom: UITableView!
     let cellName: String = "customCell"
@@ -169,6 +171,19 @@ class ViewController: UIViewController {
      }
      */
     
+    @IBAction func OnCreatePopupBtnClicked(_ sender: UIButton) {
+        print("ViewController - OnCreatePopupBtnClicked() called")
+        //스토리보드 가져오기
+        let storyboard = UIStoryboard.init(name: "PopUp", bundle: nil)
+        // 스토리보드를 통해 뷰컨트롤러 가져오기
+        let customPopupVC = storyboard.instantiateViewController(withIdentifier: AlertPopupVC) as! CustomPopupViewController
+        customPopupVC.naverBtnCompletionClosure={
+            print("컴플레션 블럭이 호출되었다.")
+            let naverUrl = URL(string : "www.naver.com")
+            
+        }
+        customPopupVC.myPopupDelegate = self
+    }
     @IBAction func mySwitch(_ sender: UISwitch){
         
     }
@@ -212,7 +227,7 @@ class ViewController: UIViewController {
      
     */
     
-    let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle"]
+    let cellTitle : Array<String> = ["pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle", "bolt.circle", "pencil.circle", "doc.circle"]
     
     
     
@@ -249,6 +264,10 @@ class ViewController: UIViewController {
     
     func sangSock_method() {
         print("ViewDidLoad!!!")
+    }
+    //MARK: popupDelegate Methods
+    func goToNaver() {
+        print("ViewController - goToNaver() called")
     }
 }
 // 여기까지가 class ViewController: UIViewController
@@ -306,12 +325,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         //doc.circle 유저
         //bolt.circle 휴지통
         
-        
-        
-        
-        
         return customCell
     }
-   // TODO: 숙제 - 프로토콜 기본적인걸로 구현해서 적용해보기
+   // TODO: 숙제 - 프로토콜 기본적인걸로 구현해서 적용해보기 2023.4.14 -> https://www.youtube.com/watch?v=e4-QBhnHmE4 참고할거야. 프로토콜-델리게이트 패턴
     
+    
+    // TODO: 숙제-Clear 2023.4.10: Array 0index를 클릭했는데 다른 버튼도 클릭이 된것처럼 이미지가 바뀌었다. 왜그런것인가?
+    // customcell에서
+    /*
+     if label_custom.text!.contains("pencil") {
+         button_custom.setImage( UIImage(named: "search"), for: .normal)
+     } else if label_custom.text!.contains("doc") {
+         button_custom.setImage( UIImage(named: "user"), for: .normal)
+     }
+     */
+    // '만약 lable_custom의 텍스트가 pencil을 포함하면 버튼 셋이미지를 search로 바꾸어라'이다.
+    // 그리고 viewController에
+    /*
+     let customCell = tableView_custom.dequeueReusableCell(withIdentifier: cellName, for: indexPath) as! CustomCell
+     */
+    // 하지만 여기서 dequeueReusableCell를 썼다.
+    // https://blog.naver.com/smui04129/222901659262
+    // swift는 메모리 할당을 했다가 큐를 지워서 메모리를 효율적으로 사용한다.
+    // 이게 한 큐가 셀 여러개를 포함하는데 화면에서 보이는 셀보다 위아래로 한개 혹은 두개 혹은 여러개로 지정할 수 있다.
+    // 디폴트로 3개로 설정되었네 이번에는.
+    // 근데 여기서 pencil.circle인 0index를 클릭해서 이미지를 바꿨는데 저 아래에 있는 bolt.circle가 바뀌었다.
+    // 그래서 형한테 custumCell에 잇는 316~320줄 코드랑 325~326줄이랑 충돌하는 거 아니냐고 했는데
+    // customCell은 클릭을 했을 때 코드가 실행되는거고,
+    // ViewController에서는 큐에 대해서 실행되기 때문에 별개라는 답을 얻었다.
 }

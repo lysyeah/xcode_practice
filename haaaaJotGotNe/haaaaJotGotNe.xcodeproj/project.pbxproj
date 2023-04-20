@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		DA8C91E829EAC7D700BE9D2F /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C91E729EAC7D700BE9D2F /* NewViewController.swift */; };
 		DA8C91EA29EACB3D00BE9D2F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8C91E929EACB3D00BE9D2F /* Person.swift */; };
+		F473E62429F100BE00AF693D /* popUpStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F473E62329F100BE00AF693D /* popUpStoryBoard.storyboard */; };
+		F473E62629F1083000AF693D /* CustomPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473E62529F1083000AF693D /* CustomPopupViewController.swift */; };
+		F473E62829F118C000AF693D /* PopupDelete.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473E62729F118C000AF693D /* PopupDelete.swift */; };
+		F473E62A29F1353A00AF693D /* AlertPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473E62929F1353A00AF693D /* AlertPopupViewController.swift */; };
 		F4A82C9629CAB97400CE25B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A82C9529CAB97400CE25B4 /* AppDelegate.swift */; };
 		F4A82C9829CAB97400CE25B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A82C9729CAB97400CE25B4 /* SceneDelegate.swift */; };
 		F4A82C9A29CAB97400CE25B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A82C9929CAB97400CE25B4 /* ViewController.swift */; };
@@ -21,6 +25,10 @@
 /* Begin PBXFileReference section */
 		DA8C91E729EAC7D700BE9D2F /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		DA8C91E929EACB3D00BE9D2F /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		F473E62329F100BE00AF693D /* popUpStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = popUpStoryBoard.storyboard; sourceTree = "<group>"; };
+		F473E62529F1083000AF693D /* CustomPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupViewController.swift; sourceTree = "<group>"; };
+		F473E62729F118C000AF693D /* PopupDelete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDelete.swift; sourceTree = "<group>"; };
+		F473E62929F1353A00AF693D /* AlertPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPopupViewController.swift; sourceTree = "<group>"; };
 		F4A82C9229CAB97400CE25B4 /* haaaaJotGotNe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = haaaaJotGotNe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A82C9529CAB97400CE25B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4A82C9729CAB97400CE25B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +70,9 @@
 		F4A82C9429CAB97400CE25B4 /* haaaaJotGotNe */ = {
 			isa = PBXGroup;
 			children = (
+				F473E62929F1353A00AF693D /* AlertPopupViewController.swift */,
+				F473E62529F1083000AF693D /* CustomPopupViewController.swift */,
+				F473E62329F100BE00AF693D /* popUpStoryBoard.storyboard */,
 				F4A82CAF29CACC6500CE25B4 /* CustomCell.swift */,
 				F4A82C9529CAB97400CE25B4 /* AppDelegate.swift */,
 				F4A82C9729CAB97400CE25B4 /* SceneDelegate.swift */,
@@ -72,6 +83,7 @@
 				F4A82C9E29CAB97600CE25B4 /* Assets.xcassets */,
 				F4A82CA029CAB97600CE25B4 /* LaunchScreen.storyboard */,
 				F4A82CA329CAB97600CE25B4 /* Info.plist */,
+				F473E62729F118C000AF693D /* PopupDelete.swift */,
 			);
 			path = haaaaJotGotNe;
 			sourceTree = "<group>";
@@ -136,6 +148,7 @@
 			files = (
 				F4A82CA229CAB97600CE25B4 /* LaunchScreen.storyboard in Resources */,
 				F4A82C9F29CAB97600CE25B4 /* Assets.xcassets in Resources */,
+				F473E62429F100BE00AF693D /* popUpStoryBoard.storyboard in Resources */,
 				F4A82C9D29CAB97400CE25B4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +162,12 @@
 			files = (
 				DA8C91EA29EACB3D00BE9D2F /* Person.swift in Sources */,
 				F4A82C9A29CAB97400CE25B4 /* ViewController.swift in Sources */,
+				F473E62A29F1353A00AF693D /* AlertPopupViewController.swift in Sources */,
 				F4A82C9629CAB97400CE25B4 /* AppDelegate.swift in Sources */,
+				F473E62829F118C000AF693D /* PopupDelete.swift in Sources */,
 				DA8C91E829EAC7D700BE9D2F /* NewViewController.swift in Sources */,
 				F4A82CB029CACC6500CE25B4 /* CustomCell.swift in Sources */,
+				F473E62629F1083000AF693D /* CustomPopupViewController.swift in Sources */,
 				F4A82C9829CAB97400CE25B4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
