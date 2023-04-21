@@ -22,52 +22,52 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="0F1-b0-fHO">
-                                <rect key="frame" x="146.66666666666666" y="499.33333333333331" width="119.99999999999997" height="118.66666666666669"/>
+                                <rect key="frame" x="136.66666666666666" y="599.33333333333337" width="119.99999999999997" height="118.66666666666663"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNv-Pr-wZR">
-                                        <rect key="frame" x="0.0" y="0.0" width="120" height="34.333333333333336"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="34.329999999999998" id="dSJ-I6-jkv"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="f99-0Q-qFd"/>
-                                            <constraint firstAttribute="width" constant="120" id="mHg-hA-P4X"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="네이버이동">
-                                            <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="goTO:" destination="bFS-xU-iEC" eventType="touchUpInside" id="BgD-q2-dj4"/>
-                                            <action selector="goToNaver:" destination="bFS-xU-iEC" eventType="touchUpInside" id="RAn-OB-Tj7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siy-X8-feU">
-                                        <rect key="frame" x="0.0" y="84.333333333333314" width="120" height="34.333333333333343"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ejg-KB-bvK"/>
-                                            <constraint firstAttribute="width" constant="84.670000000000002" id="f8n-qn-ahY"/>
-                                            <constraint firstAttribute="height" constant="34.329999999999998" id="wTV-AT-mk3"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="구글이동">
-                                            <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="goToGoogle:" destination="bFS-xU-iEC" eventType="touchUpInside" id="LEe-tl-tYD"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="8uw-kL-uDW">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="118.66666666666667"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNv-Pr-wZR">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="34.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34.329999999999998" id="dSJ-I6-jkv"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="f99-0Q-qFd"/>
+                                                    <constraint firstAttribute="width" constant="120" id="mHg-hA-P4X"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="네이버이동">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goTO:" destination="bFS-xU-iEC" eventType="touchUpInside" id="BgD-q2-dj4"/>
+                                                    <action selector="goToNaver:" destination="bFS-xU-iEC" eventType="touchUpInside" id="RAn-OB-Tj7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="siy-X8-feU">
+                                                <rect key="frame" x="0.0" y="84.333333333333258" width="120" height="34.333333333333343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="ejg-KB-bvK"/>
+                                                    <constraint firstAttribute="width" constant="120" id="f8n-qn-ahY"/>
+                                                    <constraint firstAttribute="height" constant="34.329999999999998" id="wTV-AT-mk3"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="구글이동">
+                                                    <color key="baseBackgroundColor" systemColor="systemBrownColor"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="goToGoogle:" destination="bFS-xU-iEC" eventType="touchUpInside" id="LEe-tl-tYD"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0F1-b0-fHO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" constant="10" id="TqG-CJ-8IW"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0F1-b0-fHO" secondAttribute="bottom" constant="200" id="c6a-Th-arZ"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0F1-b0-fHO" secondAttribute="bottom" constant="200" id="lyC-94-422"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0F1-b0-fHO" secondAttribute="bottom" constant="200" id="rTI-oh-XPO"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0F1-b0-fHO" secondAttribute="bottom" constant="100" id="vLs-YF-YEO"/>
-                            <constraint firstItem="0F1-b0-fHO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wfY-jx-WRP"/>
-                            <constraint firstItem="0F1-b0-fHO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xi6-Nf-hOb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0F1-b0-fHO" secondAttribute="bottom" constant="100" id="7jZ-gZ-8N8"/>
+                            <constraint firstItem="0F1-b0-fHO" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ONo-Cl-5LJ"/>
                         </constraints>
                     </view>
                 </viewController>
